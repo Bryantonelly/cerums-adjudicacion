@@ -2,7 +2,7 @@
   <img
     width="40"
     alt="Angular Logo"
-    src="../assets/img/RicoMcPato29.webp"
+    src=".\assets\img\RicoMcPato29.webp"
   />
   <span>ADJUDICACIÓN CERUMS</span>
     <div class="spacer"></div>
@@ -28,7 +28,9 @@
   </div>
 
   <input class="buscador" type="text" [(ngModel)]="searchTerm" (input)="onSearchInput()" placeholder="buscar...">
-
+  <div *ngIf="!dataLoaded">
+    <img src=".\assets\img\Loading_icon.gif" alt="Cargando...">
+  </div>
   <div class="card-container">
     <table *ngIf="dataLoaded" datatable [dtOptions]="dtOptions" class="row-border hover">
       <thead>
